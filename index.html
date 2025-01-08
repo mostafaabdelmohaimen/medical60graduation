@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical 60 Graduation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: #000000; 
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('./assets/Background.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .hero button {
+            padding: 15px 30px;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .hero button:hover {
+            background-color: #e6b800;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .invitation {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 600px;
+            display: none; 
+        }
+
+        .invitation h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #704f37;
+        }
+
+        .invitation p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .motivation {
+            font-size: 1rem;
+            font-style: italic;
+            color: #704f37;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .input-container input {
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-container input:focus {
+            border-color: #704f37;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #704f37;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-container button:hover {
+            background-color: #8c6244;
+        }
+
+        .countdown {
+            background-color: transparent; 
+            color: white; 
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .countdown h2 {
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+        }
+
+        .countdown-timer {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000; 
+            color: #ffffff; 
+        }
+
+        footer a {
+            color: #ffffff; 
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .message, .error-message, .graduation-message {
+            font-family: 'Playfair Display', serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-message {
+            color: #d9534f;
+        }
+
+        #errorMessage{
+            margin: 15px;
+            margin-top: 0;
+        }
+
+        .graduation-message {
+            color: #5cb85c;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none; 
+        }
+
+        .leave-message {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 600px;
+            display: none; 
+        }
+
+        .leave-message h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #704f37;
+        }
+
+        .leave-message p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .leave-message a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #704f37;
+            border: 2px solid #704f37;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .leave-message a:hover {
+            background-color: #704f37;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <img src="./assets/Logo.png" alt="Logo" style="max-width: 300px; margin-bottom: 0px; animation: fadeInDown 1s ease-in-out;">
+            <h1>Medical 60 Last Exam!</h1>
+            <h2>Join us for an unforgettable celebration</h2>
+            <button onclick="scrollToInvitation()">Get Graduation Message</button>
+        </div>
+    </div>
+
+    <div class="invitation" id="invitation">
+        <h2>🎓 Get Your Graduation Message!</h2>
+        <p>
+            Celebrate the achievements of the Medical 60 graduates. Enter your setting number below to receive your personalized message.
+        </p>
+
+        <blockquote class="motivation">
+            "The future belongs to those who believe in the beauty of their dreams." – Eleanor Roosevelt
+        </blockquote>
+
+        <div class="input-container">
+            <input type="text" id="settingInput" placeholder="Enter your setting number eg. 9001" />
+            <div id="errorMessage" class="error-message" style="display: none;">Please enter a valid setting number.</div>
+            <button onclick="displayMessage()">Get Message</button>
+        </div>
+
+        <div id="graduationMessage" class="graduation-message" style="display: none; margin-top: 20px;">
+            <p id="messageText" class="message" style="font-size: 1.2rem;"></p>
+        </div>
+    </div>
+
+    <div class="countdown" id="countdown">
+        <h2>Countdown to Graduation</h2>
+        <div class="countdown-timer" id="countdownTimer">Loading...</div>
+    </div>
+
+    <div class="leave-message" id="leaveMessage" style="display: none;">
+        <h2>Leave a Graduation Message</h2>
+        <p>If you’d like to leave a special graduation message for me, click the link below:</p>
+        <a href="https://mostafaabdelmohaimen.daftarna.net/" target="_blank">Leave a Message</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Medical 60 Graduation. All Rights Reserved. | <a href="https://t.me/mostafaabdelmohaimen">Contact Us</a></p>
+    </footer>
+
+    
+    <audio id="successSound" src="./assets/Graduation Ceremony.mp3" preload="auto" loop></audio>
+
+    <video id="bg-video" muted loop>
+        <source src="./assets/Gold Confetti Overlays Background - Animation Videos .mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <script>
+        function scrollToInvitation() {
+            var invitation = document.getElementById('invitation');
+            invitation.style.display = 'block'; 
+            invitation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            
+            document.getElementById('leaveMessage').style.display = 'block';
+        }
+
+        function calculateCountdown() {
+            const graduationDate = new Date('2025-01-12T00:12:00');
+            const now = new Date();
+            const diff = graduationDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdownTimer').textContent = 'The graduation ceremony has started!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdownTimer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(calculateCountdown, 1000);
+
+        async function fetchData() {
+            const response = await fetch('./data.json');
+            const data = await response.json();
+            return data.sheet1;
+        }
+
+        async function displayMessage() {
+            const settingInput = document.getElementById('settingInput');
+            const errorMessage = document.getElementById('errorMessage');
+            const graduationMessage = document.getElementById('graduationMessage');
+            const messageText = document.getElementById('messageText');
+            const settingNumber = settingInput.value.trim();
+
+            if (!settingNumber) {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Please enter a valid setting number.';
+                graduationMessage.style.display = 'none';
+                return;
+            } else {
+                errorMessage.style.display = 'none';
+            }
+
+            const data = await fetchData();
+            const entry = data.find(row => row.setting == settingNumber);
+
+            if (entry) {
+                messageText.textContent = `${entry.name}، ${entry.message}`;
+                graduationMessage.style.display = 'block';
+                graduationMessage.dir = 'rtl';
+                playSuccessSound(); 
+                playBackgroundVideo(); 
+            } else {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Setting number not found. Please try again.';
+                graduationMessage.style.display = 'none';
+            }
+        }
+
+        document.getElementById('settingInput').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                displayMessage();
+            }
+        });
+
+        function playSuccessSound() {
+            var sound = document.getElementById("successSound");
+            sound.play();
+        }
+
+        function playBackgroundVideo() {
+            var video = document.getElementById('bg-video');
+            video.style.display = 'block';
+            video.play();
+        }
+    </script>
+</body>
+</html>
