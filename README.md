@@ -48,7 +48,7 @@ This project, **Medical 60 Graduation**, is an independent personal project crea
 
 The use of Assiut University's name is solely for contextual and educational purposes, reflecting the project's connection to student work at the university. Any trademarks, logos, or materials associated with Assiut University are the property of their respective owners.
 
-For any concerns or clarifications regarding this project, please contact me directly at [mostafaabdelmohaimen@gmail.com].
+For any concerns or clarifications regarding this project, please contact me directly at [mostafaabdelmohaimen@gmail.com](mailto:mostafaabdelmohaimen@gmail.com).
 
 ## Contact
 For any inquiries or feedback, you can reach out to:
