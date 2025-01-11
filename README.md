@@ -35,7 +35,12 @@ If you want to run this project locally:
 Contributions, issues, and feature requests are welcome. Feel free to fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+License
+This project is licensed under a Custom License.
+
+Usage Restrictions: The code is available for personal and educational use only. Commercial use, including selling or reselling, is strictly prohibited without prior written consent from the copyright holder.
+Liability Disclaimer: The project is provided "as is," without warranty of any kind, express or implied. The author assumes no liability for any damages or issues resulting from the use of this project.
+For more details, please see the [LICENSE](LICENSE) file.
 
 ## Contact
 For any inquiries or feedback, you can reach out to:
