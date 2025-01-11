@@ -42,6 +42,14 @@ Usage Restrictions: The code is available for personal and educational use only.
 Liability Disclaimer: The project is provided "as is," without warranty of any kind, express or implied. The author assumes no liability for any damages or issues resulting from the use of this project.
 For more details, please see the [LICENSE](LICENSE) file.
 
+## Disclaimer
+
+This project, **Medical 60 Graduation**, is an independent personal project created by Mostafa Abdelmohaimen. It is not officially affiliated with, endorsed by, or sponsored by Assiut University.
+
+The use of Assiut University's name is solely for contextual and educational purposes, reflecting the project's connection to student work at the university. Any trademarks, logos, or materials associated with Assiut University are the property of their respective owners.
+
+For any concerns or clarifications regarding this project, please contact me directly at [mostafaabdelmohaimen@gmail.com].
+
 ## Contact
 For any inquiries or feedback, you can reach out to:
 - **Name**: Mostafa Abdelmohaimen
